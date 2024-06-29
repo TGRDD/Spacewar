@@ -77,7 +77,6 @@ public class CustomSphereCollider : MonoBehaviour, ICustomCollider
         float distance = Vector3.Distance(transform.position, other.ColliderGameObject.transform.position);
         if (distance < (radius + other.Radius))
         {
-            Debug.Log("Saw collision");
             OnCollideOther?.Invoke(other);
         }
     }

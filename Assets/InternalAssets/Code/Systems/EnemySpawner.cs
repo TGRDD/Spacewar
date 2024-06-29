@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
         if (_spawnPointsArray == null) return;
         foreach (var spawnPoint in _spawnPointsArray)
         {
-            Gizmos.DrawSphere(spawnPoint, 1f);
+            Gizmos.DrawSphere(spawnPoint, 0.1f);
         }    
     }
 

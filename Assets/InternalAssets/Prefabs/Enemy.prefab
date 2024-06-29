@@ -115,8 +115,6 @@ MonoBehaviour:
   <radius>k__BackingField: 0.84
   <colliderMask>k__BackingField: 2
   <collisionMasks>k__BackingField: 0000000001000000
-  DrawDebugGizmo: 0
-  collidePoints: []
 --- !u!114 &-6374910085756532080
 MonoBehaviour:
   m_ObjectHideFlags: 0
