@@ -3,9 +3,8 @@ using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.Jobs;
 
-public class Projectile : MonoBehaviour
+public class Projectile : PoolObject
 {
-    public event Action<Projectile> OnRelease;
 
     private float _lifeTime;
     private float _moveSpeed;
@@ -31,12 +30,6 @@ public class Projectile : MonoBehaviour
         _transformAccessArray.Add(transform);
     }
 
-
-
-    public void Release()
-    {
-        OnRelease?.Invoke(this);
-    }
 
     //TODO: CHANGE TO UNI JOB
     private void Update()

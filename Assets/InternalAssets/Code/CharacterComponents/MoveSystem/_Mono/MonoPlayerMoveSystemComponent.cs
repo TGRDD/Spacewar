@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveSystemComponent : MonoBehaviour
+public class MonoPlayerMoveSystemComponent : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private float _moveSpeed;

@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 public class PlayerRangeAttackSystemController : IAttackSystemController
 {
     private IRangeAttackSystemModel _model;
-    private ObjectPool<Projectile> _projectilePool;
+    private ObjectPool<PoolObject> _projectilePool;
 
     private float attackRate => _model.AttackRate;
     private float currentAttackRateCount;
@@ -13,7 +13,7 @@ public class PlayerRangeAttackSystemController : IAttackSystemController
     {
         _model = model;
 
-        _projectilePool = new ObjectPool<Projectile>(
+        _projectilePool = new ObjectPool<PoolObject>(
             createFunc: CreateProjectile,
             actionOnGet: GetProjectile,
             actionOnRelease: ReleaseProjectile,
@@ -28,19 +28,19 @@ public class PlayerRangeAttackSystemController : IAttackSystemController
         return obj;
     }
 
-    public void GetProjectile(Projectile obj)
+    public void GetProjectile(PoolObject obj)
     {
         obj.gameObject.SetActive(true);
         InizializeProjectileByModel(obj);
 
     }
     
-    public void ReleaseProjectile(Projectile obj)
+    public void ReleaseProjectile(PoolObject obj)
     {
         obj.gameObject.SetActive(false);
     }
 
-    public void DestroyProjectile(Projectile obj)
+    public void DestroyProjectile(PoolObject obj)
     {
         GameObject.Destroy(obj.gameObject);
     }
@@ -58,8 +58,9 @@ public class PlayerRangeAttackSystemController : IAttackSystemController
         }
     }
 
-    private void InizializeProjectileByModel(Projectile obj)
+    private void InizializeProjectileByModel(PoolObject obj)
     {
-        obj.Init(_model.ProjectileLifeTime, _model.ProjectileSpeed, _model.Damage, _model.ShootSpawnRoot.position, _model.ShootSpawnRoot.rotation);
+        Projectile proj = obj.GetComponent<Projectile>();
+        proj.Init(_model.ProjectileLifeTime, _model.ProjectileSpeed, _model.Damage, _model.ShootSpawnRoot.position, _model.ShootSpawnRoot.rotation);
     }
 }
