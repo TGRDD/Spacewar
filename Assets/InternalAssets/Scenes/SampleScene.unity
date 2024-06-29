@@ -748,10 +748,10 @@ MonoBehaviour:
   model:
     _projectilePrefab: {fileID: 1376269238636599429, guid: af175a31fcc06c544b14fd06cf1cb79c,
       type: 3}
-    _projectileSpeed: 7.35
+    _projectileSpeed: 17.88
     _damage: 3
-    _attackRate: 0.2
-    _projectileLifeTime: 1
+    _attackRate: 0.08
+    _projectileLifeTime: 0.58
     _shootSpawnRoot: {fileID: 1919132104}
 --- !u!1 &2070856363
 GameObject:

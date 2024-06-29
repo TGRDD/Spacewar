@@ -13,7 +13,11 @@ public class PlayerRangeAttackSystemController : IAttackSystemController
     {
         _model = model;
 
-        _projectilePool = new ObjectPool<Projectile>(createFunc: CreateProjectile, actionOnGet: GetProjectile, actionOnRelease: ReleaseProjectile, actionOnDestroy: DestroyProjectile);
+        _projectilePool = new ObjectPool<Projectile>(
+            createFunc: CreateProjectile,
+            actionOnGet: GetProjectile,
+            actionOnRelease: ReleaseProjectile,
+            actionOnDestroy: DestroyProjectile);
     }
 
     public Projectile CreateProjectile()
