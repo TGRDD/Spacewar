@@ -23,6 +23,7 @@ public class MonoPlayerMoveSystemComponent : MonoBehaviour
 
     private void Update()
     {
+        if (_controller != null)
         _controller.Execute();
     }
 

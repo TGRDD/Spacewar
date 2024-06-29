@@ -244,7 +244,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 104
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -519,6 +519,65 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1060524449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1060524450}
+  - component: {fileID: 1060524451}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1060524450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060524449}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.33, y: -0.4, z: 14.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060524451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060524449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2a985545f3f746a758b895f0b6825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPointsArray:
+  - {x: 0, y: 2, z: 0}
+  - {x: -5, y: 2, z: 0}
+  - {x: 5, y: 2, z: 0}
+  - {x: 10, y: 2, z: 0}
+  - {x: -10, y: 2, z: 0}
+  - {x: 2.5, y: 2, z: 0}
+  - {x: -2.5, y: 2, z: 0}
+  - {x: 7.5, y: 2, z: 0}
+  - {x: -7.5, y: 2, z: 0}
+  - {x: -7.5, y: 2, z: 4}
+  - {x: 7.5, y: 2, z: 4}
+  _objectPrefab: {fileID: 4468458107912158713, guid: 6ca9d18703106cc41a407e8c12d52114,
+    type: 3}
+  _objectRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
 --- !u!1 &1126654465
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +682,6 @@ GameObject:
   - component: {fileID: 1919132104}
   - component: {fileID: 1919132103}
   - component: {fileID: 1919132102}
-  - component: {fileID: 1919132101}
   - component: {fileID: 1919132105}
   - component: {fileID: 1919132106}
   m_Layer: 0
@@ -633,27 +691,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1919132101
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919132100}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1919132102
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -731,7 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95652dcd13bc154998044a4e8fc80cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 15
   _moveObject: {fileID: 1919132104}
 --- !u!114 &1919132106
 MonoBehaviour:
@@ -751,7 +788,7 @@ MonoBehaviour:
     _projectileSpeed: 17.88
     _damage: 3
     _attackRate: 0.08
-    _projectileLifeTime: 0.58
+    _projectileLifeTime: 2
     _shootSpawnRoot: {fileID: 1919132104}
 --- !u!1 &2070856363
 GameObject:
@@ -828,6 +865,7 @@ SceneRoots:
   - {fileID: 1919132104}
   - {fileID: 1126654466}
   - {fileID: 2123334881}
+  - {fileID: 1060524450}
   - {fileID: 1675130706}
   - {fileID: 1139877960}
   - {fileID: 91692109}

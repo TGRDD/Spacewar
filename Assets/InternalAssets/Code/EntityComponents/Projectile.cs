@@ -5,7 +5,7 @@ using UnityEngine.Jobs;
 
 public class Projectile : PoolObject
 {
-
+    
     private float _lifeTime;
     private float _moveSpeed;
     private float _damage;

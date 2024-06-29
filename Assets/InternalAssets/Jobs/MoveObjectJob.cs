@@ -13,6 +13,7 @@ public struct MoveObjectJob : IJobParallelForTransform
 
     public void Execute(int index, TransformAccess transform)
     {
-        transform.position += Vector3.forward * DeltaTime * MoveSpeed;
+        Vector3 forward = transform.rotation * Vector3.forward;
+        transform.position += forward * DeltaTime * MoveSpeed;
     }
 }
