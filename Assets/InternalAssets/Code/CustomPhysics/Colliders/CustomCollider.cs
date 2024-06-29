@@ -12,7 +12,7 @@ public interface ICustomCollider
     
     public float Radius { get; }
     public GameObject ColliderGameObject { get; }
-    public IEnumerator CheckCollision(ICustomCollider otherObject);
+    public void CheckCollision(ICustomCollider otherObject);
 
     public bool CollideEachOther(ICustomCollider other);
 }

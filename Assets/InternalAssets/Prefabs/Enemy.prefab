@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 5950582185915854893}
   - component: {fileID: 4468458107912158713}
   - component: {fileID: 1899966142739848880}
+  - component: {fileID: -6374910085756532080}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2711921478950714467
 Transform:
@@ -111,6 +112,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893c94775ce5b96448ac07fdb0b503aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <radius>k__BackingField: 0.72
+  <radius>k__BackingField: 0.84
   <colliderMask>k__BackingField: 2
   <collisionMasks>k__BackingField: 0000000001000000
+  DrawDebugGizmo: 0
+  collidePoints: []
+--- !u!114 &-6374910085756532080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286628018236626199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436a8463a14ab2e4a95ee6e2fef964ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDead:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4468458107912158713}
+        m_TargetAssemblyTypeName: AIMonoMoveSystem, Assembly-CSharp
+        m_MethodName: Release
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _collider: {fileID: 1899966142739848880}

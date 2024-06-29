@@ -18,6 +18,7 @@ public class AIMonoMoveSystem : PoolObject
 
     public override void Release()
     {
+        if (gameObject.activeInHierarchy)
         OnRelease?.Invoke(this);
         
     }

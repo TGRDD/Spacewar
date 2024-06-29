@@ -1,18 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class IHealthSystemModel : MonoBehaviour
+public interface IHealthSystemModel
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int MaxHealth { get; }
+    public int Health { get; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void SetHealth(int health);
 }
